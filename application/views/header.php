@@ -14,8 +14,8 @@
       <ul>                                                                       
         <li<?php echo $this->uri->segment(1) == '' || $this->uri->segment(1) == 'home' ? ' class="selected"' : '' ?>><a href="home">home</a></li>
         <li<?php echo $this->uri->segment(1) == 'about' ? ' class="selected"' : '' ?>><a href="about">about us</a></li>
-        <li><a href="category.html">parts</a></li>
-        <li><a href="specials.html">premium parts</a></li>
+        <li<?php echo $this->uri->segment(1) == 'category' ? ' class="selected"' : '' ?>><a href="category">category</a></li>
+        <li><a href="specials.html">services</a></li>
         <li><a href="myaccount.html">my accout</a></li>
         <li><a href="register.html">register</a></li>
         <li><a href="details.html">prices</a></li>
