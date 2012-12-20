@@ -26,7 +26,7 @@ class Home extends CI_Controller {
 		
 		// views
 		$this->load->view('header', $header);
-		$this->load->view('home/index');
+		$this->load->view('featured');
 		$this->load->view('right_tab');
 		$this->load->view('footer');
 	}

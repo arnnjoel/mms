@@ -15,11 +15,10 @@
         <li<?php echo $this->uri->segment(1) == '' || $this->uri->segment(1) == 'home' ? ' class="selected"' : '' ?>><a href="home">home</a></li>
         <li<?php echo $this->uri->segment(1) == 'about' ? ' class="selected"' : '' ?>><a href="about">about us</a></li>
         <li<?php echo $this->uri->segment(1) == 'category' ? ' class="selected"' : '' ?>><a href="category">category</a></li>
-        <li><a href="specials.html">services</a></li>
-        <li><a href="myaccount.html">my accout</a></li>
-        <li><a href="register.html">register</a></li>
-        <li><a href="details.html">prices</a></li>
-        <li><a href="contact.html">contact</a></li>
+        <li<?php echo $this->uri->segment(1) == 'services' ? ' class="selected"' : '' ?>><a href="services">services</a></li>
+        <li<?php echo $this->uri->segment(1) == 'account' ? ' class="selected"' : '' ?>><a href="account">my account</a></li>
+        <li<?php echo $this->uri->segment(1) == 'register' ? ' class="selected"' : '' ?>><a href="register">register</a></li>
+        <li<?php echo $this->uri->segment(1) == 'contact' ? ' class="selected"' : '' ?>><a href="contact">contact</a></li>
       </ul>
     </div>                 
   </div>

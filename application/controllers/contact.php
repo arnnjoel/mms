@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class About extends CI_Controller {
+class Contact extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,7 +19,7 @@ class About extends CI_Controller {
 	 */
 	public function index()
 	{
-		$header['header_title'] = 'MMS - About us';
+		$header['header_title'] = 'MMS - Contact';
 		
 		$string = 'test_val';
 		
@@ -39,5 +39,5 @@ class About extends CI_Controller {
 	}
 }
 
-/* End of file about.php */
-/* Location: ./application/controllers/about.php */
+/* End of file contact.php */
+/* Location: ./application/controllers/contact.php */
