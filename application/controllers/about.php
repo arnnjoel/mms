@@ -20,17 +20,7 @@ class About extends CI_Controller {
 	public function index()
 	{
 		$header['header_title'] = 'MMS - About us';
-		
-		$string = 'test_val';
-		
-		$newdata['string'] = $string;
-		$newdata = array(
-                   'string'  => $string,
-               );
 
-		$this->session->set_userdata($newdata);
-		
-		echo $string;
 		// views
 		$this->load->view('header', $header);
 		$this->load->view('about/index');

@@ -21,16 +21,6 @@ class Services extends CI_Controller {
 	{
 		$header['header_title'] = 'MMS - Services';
 		
-		$string = 'test_val';
-		
-		$newdata['string'] = $string;
-		$newdata = array(
-                   'string'  => $string,
-               );
-
-		$this->session->set_userdata($newdata);
-		
-		echo $string;
 		// views
 		$this->load->view('header', $header);
 		$this->load->view('about/index');

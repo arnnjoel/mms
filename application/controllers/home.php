@@ -21,9 +21,6 @@ class Home extends CI_Controller {
 	{
 		$header['header_title'] = 'MMS - Home';
 		
-		$string = $this->session->userdata('string');
-		echo $string;
-		
 		// views
 		$this->load->view('header', $header);
 		$this->load->view('featured');

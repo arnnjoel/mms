@@ -19,23 +19,56 @@ class Account extends CI_Controller {
 	 */
 	public function index()
 	{
+		if($this->session->userdata('username'))
+			redirect(base_url('account/edit'));
+		
 		$header['header_title'] = 'MMS - My account';
 		
-		$string = 'test_val';
-		
-		$newdata['string'] = $string;
-		$newdata = array(
-                   'string'  => $string,
-               );
-
-		$this->session->set_userdata($newdata);
-		
-		echo $string;
+	
 		// views
 		$this->load->view('header', $header);
-		$this->load->view('about/index');
+		$this->load->view('account/index');
 		$this->load->view('right_tab');
 		$this->load->view('footer');
+	}
+	
+	public function log_in()
+	{
+		$this->load->model('user');
+		if($this->user->add_session($_POST))
+			redirect(base_url("home"));
+		else
+			redirect(base_url("account"));
+	}
+	
+	public function edit()
+	{
+		if($this->session->userdata('username') == '')
+			redirect(base_url('account'));
+			
+		$header['header_title'] = 'MMS - My account';
+		
+		$this->load->model('user');
+		$data = $this->user->load_user($this->session->userdata('id'));
+
+		// views
+		$this->load->view('header', $header);
+		$this->load->view('account/edit', $data);
+		$this->load->view('right_tab');
+		$this->load->view('footer');
+	}
+	
+	public function log_out()
+	{
+		$this->session->sess_destroy();
+		redirect(base_url("home"));
+	}
+	
+	public function update()
+	{
+		$this->load->model('user');
+		if($this->user->update_user($_POST))
+			redirect(base_url('account/edit?update=true&flag=1'));
 	}
 }
 

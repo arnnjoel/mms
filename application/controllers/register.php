@@ -33,9 +33,16 @@ class Register extends CI_Controller {
 		echo $string;
 		// views
 		$this->load->view('header', $header);
-		$this->load->view('about/index');
+		$this->load->view('register/index');
 		$this->load->view('right_tab');
 		$this->load->view('footer');
+	}
+	
+	public function add()
+	{
+		$this->load->model('user');
+		if($this->user->add_user($_POST))
+			redirect(base_url('register?reg=true&flag=1'));
 	}
 }
 

@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Contact extends CI_Controller {
+class Contact_us extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,22 +20,19 @@ class Contact extends CI_Controller {
 	public function index()
 	{
 		$header['header_title'] = 'MMS - Contact';
-		
-		$string = 'test_val';
-		
-		$newdata['string'] = $string;
-		$newdata = array(
-                   'string'  => $string,
-               );
 
-		$this->session->set_userdata($newdata);
-		
-		echo $string;
 		// views
 		$this->load->view('header', $header);
-		$this->load->view('about/index');
+		$this->load->view('contacts/index');
 		$this->load->view('right_tab');
 		$this->load->view('footer');
+	}
+	
+	public function send()
+	{
+		$this->load->model('contact');
+		if($this->contact->add_contact($_POST))
+			redirect(base_url('contact_us?contact=true&flag=1'));
 	}
 }
 

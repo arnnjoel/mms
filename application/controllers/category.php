@@ -20,10 +20,7 @@ class Category extends CI_Controller {
 	public function index()
 	{
 		$header['header_title'] = 'MMS - Parts';
-		
-		$string = $this->session->userdata('string');
-		echo $string;
-		
+
 		// views
 		$this->load->view('header', $header);
 		$this->load->view('home/index');
