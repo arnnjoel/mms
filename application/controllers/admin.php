@@ -88,7 +88,18 @@ class Admin extends CI_Controller {
 		$this->session->unset_userdata('admin');
 		redirect(base_url('admin/login'));
 	}
+	
+	public function users()
+	{
+		$header['header_title'] = 'MMS - Admin Page';
+		$this->load->model('user');
+		$data['users'] = $this->user->get_users();
+		// views
+		$this->load->view('admin/header', $header);
+		$this->load->view('admin/users/view', $data);
+		$this->load->view('admin/footer');
+	}
+	
 }
-
-/* End of file about.php */
-/* Location: ./application/controllers/about.php */
+/* End of file admin.php */
+/* Location: /application/controllers/admin.php */

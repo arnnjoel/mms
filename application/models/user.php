@@ -77,4 +77,15 @@ class User extends CI_Model {
 		else
 			return false;
 	}
+	
+	function get_users()
+	{
+		$this->db->select('*');
+		$this->db->from('users');
+		$this->db->order_by('id', 'ASC');
+		$query = $this->db->get();
+		
+		$result = $query->result_array();
+		return $result;
+	}
 }

@@ -33,7 +33,7 @@
                     
                     
                     <div class="form_row">
-                    <label class="contact"><strong>Adrres:</strong></label>
+                    <label class="contact"><strong>Address:</strong></label>
                     <input type="text" name="address" class="contact_input" />
                     </div>                    
 
