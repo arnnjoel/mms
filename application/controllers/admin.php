@@ -100,6 +100,72 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/footer');
 	}
 	
+	public function edit_user($id)
+	{
+		$this->db->select('*');
+		$this->db->from('users');
+		$this->db->where('id', $id);
+		$query = $this->db->get();
+		
+		$data['result'] = $query->row_array();
+		$header['header_title'] = 'MMS - Admin Page';
+		
+		// views
+		$this->load->view('admin/header', $header);
+		$this->load->view('admin/users/edit_user', $data);
+		$this->load->view('admin/footer');
+	}
+	
+	public function delete_user($id)
+	{
+		$this->db->delete('users', array('id' => $id));
+		redirect(base_url('admin/users'));
+	}
+	
+	public function products()
+	{
+		$header['header_title'] = 'MMS - Admin Page';
+		$this->load->model('product');
+		$data['products'] = $this->product->get_products();
+		// views
+		$this->load->view('admin/header', $header);
+		$this->load->view('admin/products/view_prod', $data);
+		$this->load->view('admin/footer');
+	}
+	
+	public function edit_product($id)
+	{
+		$this->db->select('*');
+		$this->db->from('products');
+		$this->db->where('id', $id);
+		$query = $this->db->get();
+		
+		$data['result'] = $query->row_array();
+		$header['header_title'] = 'MMS - Admin Page';
+		
+		// views
+		$this->load->view('admin/header', $header);
+		$this->load->view('admin/products/edit_prod', $data);
+		$this->load->view('admin/footer');
+	}
+	
+	public function delete_product($id)
+	{
+		$this->db->delete('products', array('id' => $id));
+		redirect(base_url('admin/products'));
+	}
+	
+	public function add_product()
+	{
+		$header['header_title'] = 'MMS - Admin Page';
+		$this->load->model('product');
+		$data['products'] = $this->product->add_product();
+		// views
+		$this->load->view('admin/header', $header);
+		$this->load->view('admin/products/view_prod', $data);
+		$this->load->view('admin/footer');
+	}
+	
 }
 /* End of file admin.php */
 /* Location: /application/controllers/admin.php */

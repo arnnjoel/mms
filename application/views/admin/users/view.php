@@ -15,6 +15,7 @@
       <td><?php echo $values['email']; ?></td>
       <td width="80"><?php echo date("Y-m-d", strtotime($values['create_at'])); ?></td>
       <td>
+      	<a href="admin/edit_user/<?php echo $values['id']; ?>">edit</a> | <a onClick="return confirm('Delete contact?');" href="admin/delete_user/<?php echo $values['id']; ?>">del</a>
        </td>
     </tr>
     <?php } ?>

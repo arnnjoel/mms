@@ -21,13 +21,11 @@ class Product extends CI_Model {
 	
 	function add_product($data)
 	{
-		print_r($data);
+		//print_r($data);
 		$save = array(
-							'name' => $data['name'],
-							'email' => $data['email'],
-							'phone' => $data['phone'],
-							'address' => $data['address'],
-							'message' => $data['message'],
+							'prod_name' => $data['prod_name'],
+							'prod_price' => $data['prod_price'],
+							'description' => $data['description'],
 							);
 		if($this->db->insert('products', $save))
 			return true;
