@@ -11,13 +11,13 @@
                  <form name="register" method="post" action="register/add">          
                     <div class="form_row">
                     <label class="contact"><strong>product name:</strong></label>
-                    <input type="text" name="prod_name" class="contact_input" />
+                    <input type="text" name="name" class="contact_input" />
                     </div>  
 
 
                     <div class="form_row">
                     <label class="contact"><strong>price:</strong></label>
-                    <input type="text" name="prod_price" class="contact_input" />
+                    <input type="text" name="price" class="contact_input" />
                     </div> 
                     
                     

@@ -159,7 +159,7 @@ class Admin extends CI_Controller {
 	{
 		$header['header_title'] = 'MMS - Admin Page';
 		$this->load->model('product');
-		$data['products'] = $this->product->add_product();
+		$data['products'] = $this->product->add_product($_POST);
 		// views
 		$this->load->view('admin/header', $header);
 		$this->load->view('admin/products/view_prod', $data);
