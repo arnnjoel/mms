@@ -16,7 +16,7 @@
         <li><a href="admin/users">Users</a></li>
         <li><a href="admin/contacts">Contacts</a></li>
         <li><a href="admin/products">Products</a></li>
-        <li><a href="admin/category">Category</a></li>
+        <li><a href="admin/categories">Category</a></li>
         <?php if($this->session->userdata('admin')){ ?>
         <li><a href="admin/logout">Logout</a></li>
         <?php } ?>

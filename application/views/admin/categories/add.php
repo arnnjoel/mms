@@ -1,5 +1,5 @@
 <div class="left_content">
-            <div class="title"><span class="title_icon"><img src="images/bullet1.gif" alt="" title="" /></span>Register</div>
+            <div class="title"><span class="title_icon"><img src="images/bullet1.gif" alt="" title="" /></span>Add Category</div>
         
         	<div class="feat_prod_box_details">
             <p class="details">
@@ -7,30 +7,15 @@
             </p>
             
               	<div class="contact_form">
-                <div class="form_subtitle">add new product</div>
-                 <form name="register" method="post" action="register/add">          
+                <div class="form_subtitle">add new category</div>
+                 <form name="register" method="post" action="" enctype="multipart/form-data">          
                     <div class="form_row">
-                    <label class="contact"><strong>product name:</strong></label>
-                    <input type="text" name="name" class="contact_input" />
-                    </div>  
-
-
-                    <div class="form_row">
-                    <label class="contact"><strong>price:</strong></label>
-                    <input type="text" name="price" class="contact_input" />
-                    </div> 
-                    
+                    <label class="contact"><strong>name:</strong></label>
+                    <input type="text" name="category_name" class="contact_input" />
+                    </div>
                     
                     <div class="form_row">
-                    <label class="contact"><strong>description:</strong></label>
-                    <input type="text" name="description" class="contact_input" />
-                    </div>                    
-
-                    
-
-                    
-                    <div class="form_row">
-                    <input type="submit" class="register" value="register" name="submit"/>
+                    <input type="submit" class="register" value="Add" name="submit"/>
                     </div>  
                      
                      <?php

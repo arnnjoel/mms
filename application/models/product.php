@@ -8,36 +8,123 @@ class Product extends CI_Model {
 		parent::__construct();
 	}
 	
-	function get_products()
+	function show($id = '')
 	{
-		$this->db->select('*');
+		if(empty($id))
+		{
+			$this->db->select('products.*, categories.category_name');
+			$this->db->from('products');
+			$this->db->join('categories', 'categories.id = products.category_id');
+			$this->db->order_by('products.id', 'ASC');
+			$query = $this->db->get();
+			
+			$result = $query->result_array();
+			return $result;
+		}
+		else
+		{
+			$this->db->select('products.*, categories.category_name');
+			$this->db->from('products');
+			$this->db->join('categories', 'categories.id = products.category_id');
+			$this->db->where('products.id', $id);
+			$this->db->order_by('products.id', 'ASC');
+			$query = $this->db->get();
+			
+			$result = $query->row_array();
+			return $result;
+		}
+	}
+	
+	function add($data, $file = '')
+	{
+		preg_match('/\.[^\.]+$/i', $file['image']['name'], $match);
+		$file_ext = $match[0];
+		$filename = uniqid() . $file_ext;
+		
+		if($file_ext == '.BMP' || $file_ext == '.jpg')
+		{
+			$save = array(
+								'name' => $data['name'],
+								'price' => $data['price'],
+								'description' => $data['description'],
+								'quantity' => $data['quantity'],
+								'category_id' => $data['category'],
+								'image' => $filename
+								);
+			if($this->db->insert('products', $save))
+			{
+				if (file_exists("images/uploads/" . $filename))
+					return false;
+				else
+				{
+					move_uploaded_file($file['image']['tmp_name'], "images/uploads/" . $filename);
+					return true;
+				}
+			}
+			else
+				return false;
+		}
+		else
+			return false;
+	}
+	
+	function edit($data, $id, $file = '')
+	{
+		preg_match('/\.[^\.]+$/i', $file['image']['name'], $match);
+		$file_ext = $match[0];
+		$filename = uniqid() . $file_ext;
+
+		if($this->validate_email($data['email']) == false)
+			return false;
+			
+		$data = array(
+							'name' => $data['name'],
+							'price' => $data['price'],
+							'description' => $data['description'],
+							'quantity' => $data['quantity'],
+							'category_id' => $data['category'],
+							'image' => $filename
+							);
+		
+		$this->db->where('id', $id);
+		if($this->db->update('products', $data))
+		{
+			if (file_exists("images/uploads/" . $filename))
+				return false;
+			else
+			{
+				move_uploaded_file($file['image']['tmp_name'], "images/uploads/" . $filename);
+				return true;
+      }
+		}
+		else
+			return false;
+	}
+	
+	function featured_products($limit = 10)
+	{
+		$this->db->select('products.*, categories.category_name');
+			$this->db->from('products');
+			$this->db->join('categories', 'categories.id = products.category_id');
+			$this->db->order_by('products.id', 'random');
+			$this->db->limit($limit);
+			$query = $this->db->get();
+			
+			$result = $query->result_array();
+			return $result;
+	}
+	
+	function new_products($limit = 6)
+	{
+		$this->db->select('products.*, categories.category_name');
 		$this->db->from('products');
-		$this->db->order_by('id', 'ASC');
+		$this->db->join('categories', 'categories.id = products.category_id');
+		$this->db->order_by('products.id', 'desc');
+		$this->db->limit($limit);
 		$query = $this->db->get();
 		
 		$result = $query->result_array();
 		return $result;
 	}
 	
-	function add_product($data)
-	{
-		print_r($data);
-		$save = array(
-							'name' => $data['prod_name'],
-							'price' => $data['prod_price'],
-							'description' => $data['description'],
-							);
-		if($this->db->insert('products', $save))
-			return true;
-		else
-			return false;
-	}
-	
-	function update_product($data)
-	{
-	}
-	
-	function show_product($id)
-	{
-	}
 }

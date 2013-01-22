@@ -50,30 +50,9 @@
 	<div class="right_box">
   	<div class="title"><span class="title_icon"><img src="images/bullet5.gif" alt="" title=""></span>Categories</div>
   	<ul class="list">
-      <li><a href="#">accesories</a></li>
-      <li><a href="#">premium parts</a></li>
-      <li><a href="#">specials</a></li>
-      <li><a href="#">best deals</a></li>
-      <li><a href="#">accesories</a></li>
-      <li><a href="#">premium parts</a></li>
-      <li><a href="#">specials</a></li>
-      <li><a href="#">best deals</a></li>
-      <li><a href="#">accesories</a></li>
-      <li><a href="#">premium parts</a></li>
-      <li><a href="#">specials</a></li>                                              
-    </ul>
-    
-    <div class="title"><span class="title_icon"><img src="images/bullet6.gif" alt="" title=""></span>Partners</div>
-    <ul class="list">
-      <li><a href="#">accesories</a></li>
-      <li><a href="#">premium parts</a></li>
-      <li><a href="#">specials</a></li>
-      <li><a href="#">best deals</a></li>
-      <li><a href="#">accesories</a></li>
-      <li><a href="#">premium parts</a></li>
-      <li><a href="#">specials</a></li>
-      <li><a href="#">best deals</a></li>
-      <li><a href="#">accesories</a></li>                              
+    	<?php foreach($categories as $key => $values){ ?>
+      <li><a href="#"><?php echo $values['category_name'] ?></a></li>
+      <?php } ?>
     </ul>
   </div>
 

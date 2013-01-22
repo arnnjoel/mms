@@ -18,7 +18,7 @@
       <td width="250"><?php echo $values['message']; ?></td>
       <td width="80"><?php echo date("Y-m-d", strtotime($values['created_at'])); ?></td>
       <td>
-      	<a href="admin/edit_contact/<?php echo $values['id']; ?>">edit</a> | <a onClick="return confirm('Delete contact?');" href="admin/delete_contact/<?php echo $values['id']; ?>">del</a>
+      	<a onClick="return confirm('Delete contact?');" href="admin/contacts/delete/<?php echo $values['id']; ?>"><img src="./images/admin/b_drop.png" title="delete" /></a>
        </td>
     </tr>
     <?php } ?>

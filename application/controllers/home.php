@@ -20,11 +20,17 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$header['header_title'] = 'MMS - Home';
+		$this->load->model('product');
+		$this->load->model('category');
+		
+		$data['featured'] = $this->product->featured_products(2);
+		$data['new'] = $this->product->new_products(6);
+		$data['categories'] = $this->category->show();
 		
 		// views
 		$this->load->view('header', $header);
-		$this->load->view('featured');
-		$this->load->view('right_tab');
+		$this->load->view('home/index', $data);
+		$this->load->view('right_tab', $data);
 		$this->load->view('footer');
 	}
 	

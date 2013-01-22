@@ -20,11 +20,19 @@ class Category extends CI_Controller {
 	public function index()
 	{
 		$header['header_title'] = 'MMS - Parts';
+		
+		$this->load->model('product');
+		//$this->load->model('category', 'fubar');
+		//$this->load->model('category', 'cat');
+		
+		$data['featured'] = $this->product->featured_products(2);
+		$data['new'] = $this->product->new_products(6);
+		//$data['categories'] = $this->cat->show();
 
 		// views
 		$this->load->view('header', $header);
-		$this->load->view('home/index');
-		$this->load->view('right_tab');
+		$this->load->view('home/index', $data);
+		$this->load->view('right_tab', $data);
 		$this->load->view('footer');
 	}
 	
