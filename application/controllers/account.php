@@ -56,8 +56,8 @@ class Account extends CI_Controller {
 		$this->load->model('user');
 		$data = $this->user->load_user($this->session->userdata('id'));
 		echo $this->session->userdata('id');
-		print_r($this->session->userdata);
-		print_r($data);
+		//print_r($this->session->userdata);
+		//print_r($data);
 		// views
 		$this->load->view('header', $header);
 		$this->load->view('account/edit', $data);

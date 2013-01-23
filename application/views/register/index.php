@@ -3,7 +3,7 @@
         
         	<div class="feat_prod_box_details">
             <p class="details">
-             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+             JOIN US! Register an account and choose your desire username and password together with your email, phone and address.
             </p>
             
               	<div class="contact_form">

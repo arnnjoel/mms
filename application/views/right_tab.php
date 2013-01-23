@@ -14,7 +14,7 @@
   <div class="about">
     <p>
       <img src="images/about.gif" alt="" title="" class="right">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+      MMS SURPLUS CENTER sell different kinds of surplus vehicles, and auto parts including heavy trucks and vans.
     </p>   
    </div>
 
