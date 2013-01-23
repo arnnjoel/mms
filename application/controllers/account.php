@@ -23,12 +23,15 @@ class Account extends CI_Controller {
 			redirect(base_url('account/edit'));
 		
 		$header['header_title'] = 'MMS - My account';
+		$this->load->model('category');
+		
+		$data['categories'] = $this->category->show();
 		
 	
 		// views
 		$this->load->view('header', $header);
-		$this->load->view('account/index');
-		$this->load->view('right_tab');
+		$this->load->view('account/index', $data);
+		$this->load->view('right_tab', $data);
 		$this->load->view('footer');
 	}
 	

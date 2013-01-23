@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Category extends CI_Controller {
+class Categorys extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,6 +20,7 @@ class Category extends CI_Controller {
 	public function index()
 	{
 		$header['header_title'] = 'MMS - Parts';
+		$this->load->model('category');
 		
 		$this->load->model('product');
 		//$this->load->model('category', 'fubar');
@@ -27,6 +28,7 @@ class Category extends CI_Controller {
 		
 		$data['featured'] = $this->product->featured_products(2);
 		$data['new'] = $this->product->new_products(6);
+		$data['categories'] = $this->category->show();
 		//$data['categories'] = $this->cat->show();
 
 		// views

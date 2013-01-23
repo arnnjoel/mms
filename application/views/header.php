@@ -15,7 +15,7 @@
       <ul>                                                                       
         <li<?php echo $this->uri->segment(1) == '' || $this->uri->segment(1) == 'home' ? ' class="selected"' : '' ?>><a href="home">home</a></li>
         <li<?php echo $this->uri->segment(1) == 'about' ? ' class="selected"' : '' ?>><a href="about">about us</a></li>
-        <li<?php echo $this->uri->segment(1) == 'category' ? ' class="selected"' : '' ?>><a href="category">category</a></li>
+        <li<?php echo $this->uri->segment(1) == 'category' ? ' class="selected"' : '' ?>><a href="categorys">category</a></li>
         <li<?php echo $this->uri->segment(1) == 'services' ? ' class="selected"' : '' ?>><a href="services">services</a></li>
         <li<?php echo $this->uri->segment(1) == 'account' ? ' class="selected"' : '' ?>><a href="account">my account</a></li>
         <?php if($this->session->userdata('username') == ''){ ?>

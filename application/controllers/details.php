@@ -20,11 +20,17 @@ class Details extends CI_Controller {
 	
 	public function item($id)
 	{
+		$header['header_title'] = 'MMS - Details';
 		$this->load->model('product');
 		$data = $this->product->show($id);
 		echo '<pre>';
 		print_r($data);
 		echo '</pre>';
+		
+		$this->load->view('header', $header);
+		$this->load->view('details/index', $data);
+		$this->load->view('right_tab', $data);
+		$this->load->view('footer');
 	}
 }
 

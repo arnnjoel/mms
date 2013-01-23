@@ -20,11 +20,14 @@ class Contact_us extends CI_Controller {
 	public function index()
 	{
 		$header['header_title'] = 'MMS - Contact';
+		$this->load->model('category');
+		
+		$data['categories'] = $this->category->show();
 
 		// views
 		$this->load->view('header', $header);
-		$this->load->view('contacts/index');
-		$this->load->view('right_tab');
+		$this->load->view('contacts/index', $data);
+		$this->load->view('right_tab', $data);
 		$this->load->view('footer');
 	}
 	

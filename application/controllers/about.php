@@ -20,11 +20,15 @@ class About extends CI_Controller {
 	public function index()
 	{
 		$header['header_title'] = 'MMS - About us';
+		$this->load->model('category');
+		
+		$data['categories'] = $this->category->show();
+		
 
 		// views
 		$this->load->view('header', $header);
-		$this->load->view('about/index');
-		$this->load->view('right_tab');
+		$this->load->view('about/index', $data);
+		$this->load->view('right_tab', $data);
 		$this->load->view('footer');
 	}
 }

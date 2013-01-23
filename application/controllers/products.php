@@ -33,7 +33,7 @@ class Products extends CI_Controller {
 	{
 		if(!empty($_POST))
 		{
-			if($this->product->add($_POST))
+			if($this->product->add($_POST, $_FILES))
 				redirect(base_url('admin/products'));
 		}
 		

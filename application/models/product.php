@@ -41,7 +41,7 @@ class Product extends CI_Model {
 		$file_ext = $match[0];
 		$filename = uniqid() . $file_ext;
 		
-		if($file_ext == '.BMP' || $file_ext == '.jpg')
+		if($file_ext == '.BMP' || $file_ext == '.bmp' || $file_ext == '.jpg' || $file_ext == '.JPG' || $file_ext == '.PNG' || $file_ext == '.png')
 		{
 			$save = array(
 								'name' => $data['name'],
@@ -74,8 +74,8 @@ class Product extends CI_Model {
 		$file_ext = $match[0];
 		$filename = uniqid() . $file_ext;
 
-		if($this->validate_email($data['email']) == false)
-			return false;
+		//if($this->validate_email($data['email']) == false)
+			//return false;
 			
 		$data = array(
 							'name' => $data['name'],
