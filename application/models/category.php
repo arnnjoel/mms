@@ -57,4 +57,8 @@ class Category extends CI_Model {
 		else
 			return false;
 	}
+	
+	function all_category_items($limit)
+	{
+	}
 }

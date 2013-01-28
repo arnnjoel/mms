@@ -27,6 +27,7 @@
       </tr>                  
     
     </table>
+    <a href="cart/cancel_order" class="continue">cancel order</a>
     <a href="cart/checkout" class="checkout">checkout &gt;</a>
     
   </div>	

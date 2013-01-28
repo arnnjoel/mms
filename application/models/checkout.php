@@ -35,4 +35,17 @@ class Checkout extends CI_Model {
 		}
 		return true;
 	}
+	
+	function show()
+	{
+		//for chckout example
+		$this->db->select('products.id, products.name, products.price, checkouts.quantity, products.image, checkouts.created_at');
+		$this->db->from('checkouts');
+		$this->db->join('products', 'checkouts.product_id = products.id');
+		$this->db->order_by('products.id', 'ASC');
+		$query = $this->db->get();
+		$result = $query->result_array();
+		
+		printr($result);
+	}
 }

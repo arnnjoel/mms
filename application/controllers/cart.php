@@ -78,6 +78,12 @@ class Cart extends CI_Controller {
 		}
 	}
 	
+	public function cancel_order()
+	{
+		$this->cart->destroy();
+		redirect(base_url('cart'));
+	}
+	
 	public function checkout()
 	{
 		$this->checkout->checkout_items();
