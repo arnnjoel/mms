@@ -1,13 +1,13 @@
 <div class="left_content">
-            <div class="title"><span class="title_icon"><img src="images/bullet1.gif" alt="" title="" /></span>Add Category</div>
+            <div class="title"><span class="title_icon"><img src="images/bullet1.gif" alt="" title="" /></span>Category</div>
         
         	<div class="feat_prod_box_details">
             <p class="details">
-             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+             <b>Edit edit edit</b>
             </p>
             
               	<div class="contact_form">
-                <div class="form_subtitle">add new category</div>
+                <div class="form_subtitle">edit category</div>
                  <form name="register" method="post" action="" enctype="multipart/form-data">          
                     <div class="form_row">
                     <label class="contact"><strong>name:</strong></label>

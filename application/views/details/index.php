@@ -4,20 +4,17 @@
             <a href="index.html">home</a> &gt;&gt; product name
             </div>
             <div class="title"><span class="title_icon"><img src="images/bullet1.gif" alt="" title="" /></span>Product name</div>
+            <?php foreach($featured as $key => $values){ ?>
         
         	<div class="feat_prod_box_details">
             
-            	<div class="prod_img"><a href="details.html"><img src="images/prod1.gif" alt="" title="" border="0" /></a>
-                <br /><br />
-                <a href="images/big_pic.jpg" rel="lightbox"><img src="images/zoom.gif" alt="" title="" border="0" /></a>
-                </div>
+            	<div class="prod_img"><a href="details/item/<?php echo $values['id']; ?>"><img src="images/uploads/<?php echo $values['image']; ?>" width="119" alt="" title="" border="0"></a></div>
                 
                 <div class="prod_det_box">
                 	<div class="box_top"></div>
                     <div class="box_center">
-                    <div class="prod_title">Details</div>
-                    <p class="details">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.<br />
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.                    </p>
+                    <div class="prod_title"><?php echo $values['name']; ?></div>
+                    <p class="details"><?php echo $values['description']; ?></p>
                     <div class="price"><strong>PRICE:</strong> <span class="red">100 $</span></div>
                     <div class="price"><strong>COLORS:</strong> 
                     <span class="colors"><img src="images/color1.gif" alt="" title="" border="0" /></span>
@@ -30,7 +27,8 @@
                     <div class="box_bottom"></div>
                 </div>    
             <div class="clear"></div>
-            </div>	
+            </div>
+            <?php } ?>
             
               
             <div id="demo" class="demolayout">

@@ -26,7 +26,7 @@ class Services extends CI_Controller {
 		
 		// views
 		$this->load->view('header', $header);
-		$this->load->view('about/index', $data);
+		$this->load->view('services/index', $data);
 		$this->load->view('right_tab', $data);
 		$this->load->view('footer');
 	}

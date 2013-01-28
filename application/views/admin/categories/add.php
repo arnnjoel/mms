@@ -3,7 +3,7 @@
         
         	<div class="feat_prod_box_details">
             <p class="details">
-             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+             <b>Input name of the new category!</b>
             </p>
             
               	<div class="contact_form">

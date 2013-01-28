@@ -6,17 +6,17 @@
       <th>address</th>
       <th>email</th>
       <th>date sent</th>
+      <th>option</th>
     </tr>
     <?php foreach($users as $key => $values){ ?>
     <tr style="border: 1px solid #000">
-			<td><?php echo $values['username']; ?></td>
-      <td><?php echo $values['phone']; ?></td>
-      <td><?php echo $values['address']; ?></td>
-      <td><?php echo $values['email']; ?></td>
-      <td width="80"><?php echo date("Y-m-d", strtotime($values['create_at'])); ?></td>
-      <td>
-      	<a href="admin/users/edit/<?php echo $values['id']; ?>">edit</a> | <a onClick="return confirm('Delete contact?');" href="admin/users/delete/<?php echo $values['id']; ?>">del</a>
-       </td>
+			<td align="center"><?php echo $values['username']; ?></td>
+      <td align="center"><?php echo $values['phone']; ?></td>
+      <td align="center"><?php echo $values['address']; ?></td>
+      <td align="center"><?php echo $values['email']; ?></td>
+      <td align="center"><?php echo date("Y-m-d", strtotime($values['create_at'])); ?></td>
+      <td align="center">
+      	<a onClick="return confirm('Delete contact?');" href="admin/users/delete/<?php echo $values['id']; ?>"><img src="./images/admin/b_drop.png" title="delete" /></a>
     </tr>
     <?php } ?>
   </table>
