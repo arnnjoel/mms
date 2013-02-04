@@ -51,7 +51,7 @@
   	<div class="title"><span class="title_icon"><img src="images/bullet5.gif" alt="" title=""></span>Categories</div>
   	<ul class="list">
     	<?php foreach($categories as $key => $values){ ?>
-      <li><a href="#"><?php echo $values['category_name'] ?></a></li>
+      <li><a href="./categories/category/<?php echo $values['id'] ?>"><?php echo $values['category_name'] ?></a></li>
       <?php } ?>
     </ul>
   </div>

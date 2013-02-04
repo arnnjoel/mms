@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="merchant_2checkout.php" server="6te.net" local="130044573541149217" remote="130044070200000000" />
+<file name="merchant_authorize_net.php" server="6te.net" local="130044573541499237" remote="130044070200000000" />
+<file name="merchant_authorize_net_sim.php" server="6te.net" local="130044573541699248" remote="130044070200000000" />
+<file name="merchant_buckaroo.php" server="6te.net" local="130044573542079270" remote="130044070200000000" />
+<file name="merchant_dps_pxpost.php" server="6te.net" local="130044573542959320" remote="130044070200000000" />
+<file name="merchant_dummy.php" server="6te.net" local="130044573543389345" remote="130044070200000000" />
+<file name="merchant_eway.php" server="6te.net" local="130044573543859372" remote="130044070200000000" />
+<file name="merchant_eway_shared.php" server="6te.net" local="130044573544219392" remote="130044070200000000" />
+<file name="merchant_eway_shared_uk.php" server="6te.net" local="130044573544619415" remote="130044070200000000" />
+<file name="merchant_gocardless.php" server="6te.net" local="130044573544849428" remote="130044070200000000" />
+<file name="merchant_ideal.php" server="6te.net" local="130044573545049440" remote="130044070200000000" />
+<file name="merchant_manual.php" server="6te.net" local="130044573545219449" remote="130044070200000000" />
+<file name="merchant_mollie.php" server="6te.net" local="130044573545399460" remote="130044070200000000" />
+<file name="merchant_netaxept.php" server="6te.net" local="130044573545539468" remote="130044070200000000" />
+<file name="merchant_ogone_directlink.php" server="6te.net" local="130044573545699477" remote="130044070200000000" />
+<file name="merchant_payflow_pro.php" server="6te.net" local="130044573546329513" remote="130044070200000000" />
+<file name="merchant_paymate.php" server="6te.net" local="130044573546599528" remote="130044070200000000" />
+<file name="merchant_paypal_base.php" server="6te.net" local="130044573547049554" remote="130044070200000000" />
+<file name="merchant_paypal_express.php" server="6te.net" local="130044573547379573" remote="130044070200000000" />
+<file name="merchant_paypal_pro.php" server="6te.net" local="130044573547569584" remote="130044070200000000" />
+<file name="merchant_rabo_omnikassa.php" server="6te.net" local="130044573548059612" remote="130044070800000000" />
+<file name="merchant_sagepay_base.php" server="6te.net" local="130044573548239622" remote="130044070800000000" />
+<file name="merchant_sagepay_direct.php" server="6te.net" local="130044573548419632" remote="130044070800000000" />
+<file name="merchant_sagepay_server.php" server="6te.net" local="130044573548589642" remote="130044070800000000" />
+<file name="merchant_stripe.php" server="6te.net" local="130044573548759652" remote="130044070800000000" />
+<file name="merchant_webteh_direct.php" server="6te.net" local="130044573548949663" remote="130044070800000000" />
+<file name="merchant_worldpay.php" server="6te.net" local="130044573549089671" remote="130044070800000000" />
+<file name="merchant_cardsave.php" server="6te.net" local="130044573542399288" remote="130044071400000000" />
+</dwsync>

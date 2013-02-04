@@ -12,16 +12,30 @@ class Category extends CI_Model {
 	{
 		if(empty($id))
 		{
+			$this->load->library('pagination');
+			
 			$this->db->select('*');
 			$this->db->from('categories');
 			$this->db->order_by('id', 'ASC');
 			$query = $this->db->get();
 			
+			/*$config['base_url'] = base_url('admin/categories/show');
+			$config['uri_segment'] = 4;
+			$config['total_rows'] = $query->num_rows();
+			$config['per_page'] = 1; 
+			$this->pagination->initialize($config); 
+			
+			$this->db->select('*');
+			$this->db->from('categories');
+			$this->db->order_by('id', 'ASC');
+			$this->db->limit($config['per_page'], $this->uri->segment(4));
+			$query = $this->db->get();*/
+			
 			$result = $query->result_array();
 			return $result;
 		}
 		else
-		{
+		{			
 			$this->db->select('*');
 			$this->db->from('categories');
 			$this->db->where('id', $id);
@@ -58,7 +72,39 @@ class Category extends CI_Model {
 			return false;
 	}
 	
-	function all_category_items($limit)
+	function get_category_item($id)
 	{
+		$this->load->library('pagination');
+		
+		$this->db->select('*');
+		$this->db->from('products');
+		$this->db->where('category_id', $id);
+		$query = $this->db->get();
+		
+		$config['base_url'] = base_url('categories/category/' . $id . '/');
+		$config['uri_segment'] = 4;
+		$config['total_rows'] = $query->num_rows();
+		$config['per_page'] = 1; 
+		$this->pagination->initialize($config); 
+		
+		$this->db->select('*');
+		$this->db->from('products');
+		$this->db->where('category_id', $id);
+		$this->db->limit($config['per_page'], $this->uri->segment(4));
+		$query = $this->db->get();
+		
+		$result = $query->result_array();
+		
+		return $result;
+	}
+	
+	function get_category_name($id)
+	{
+		$this->db->select('category_name');
+		$this->db->from('categories');
+		$this->db->where('id', $id);
+		$query = $this->db->get();
+		$cat_name = $query->row_array();
+		return $cat_name['category_name'];
 	}
 }

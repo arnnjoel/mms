@@ -28,7 +28,7 @@
     
     </table>
     <a href="cart/cancel_order" class="continue">cancel order</a>
-    <a href="cart/checkout" class="checkout">checkout &gt;</a>
+    <a href="cart/checkout_to_paypal" class="checkout">checkout &gt;</a>
     
   </div>	
 	<div class="clear"></div>

@@ -4,7 +4,10 @@
 <base href="<?php echo base_url(); ?>">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo $header_title ?></title>
+<link rel="icon" type="image/png" href="<?php echo base_url('images/favicon.ico'); ?>">
 <link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </head>
 
 <body>
@@ -15,7 +18,6 @@
       <ul>                                                                       
         <li<?php echo $this->uri->segment(1) == '' || $this->uri->segment(1) == 'home' ? ' class="selected"' : '' ?>><a href="home">home</a></li>
         <li<?php echo $this->uri->segment(1) == 'about' ? ' class="selected"' : '' ?>><a href="about">about us</a></li>
-        <li<?php echo $this->uri->segment(1) == 'categorys' ? ' class="selected"' : '' ?>><a href="categorys">category</a></li>
         <li<?php echo $this->uri->segment(1) == 'services' ? ' class="selected"' : '' ?>><a href="services">services</a></li>
         <li<?php echo $this->uri->segment(1) == 'account' ? ' class="selected"' : '' ?>><a href="account">my account</a></li>
         <?php if($this->session->userdata('username') == ''){ ?>

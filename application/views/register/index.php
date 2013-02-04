@@ -8,7 +8,7 @@
             
               	<div class="contact_form">
                 <div class="form_subtitle">create new account</div>
-                 <form name="register" method="post" action="register/add">          
+                 <form name="register" method="post" action="register/add" id="mms_register">          
                     <div class="form_row">
                     <label class="contact"><strong>Username:</strong></label>
                     <input type="text" name="username" class="contact_input" />
@@ -39,7 +39,7 @@
 
                     <div class="form_row">
                         <div class="terms">
-                        <input type="checkbox" name="terms" value="1" />
+                        <input type="checkbox" name="terms" value="1" id="click_test" />
                         I agree to the <a href="#">terms &amp; conditions</a>                        </div>
                     </div> 
 
@@ -47,7 +47,12 @@
                     <div class="form_row">
                     <input type="submit" class="register" value="register" name="submit"/>
                     </div>  
-                     
+                    
+                    
+                    <div class="form_row" id="reg_result">
+                   		<h3 id="username_err" class="user_error" style="display: none;color: red; text-align:center">INVALID USERNAME</h3>
+                      <h3 id="email_err" class="email_error" style="display: none;color: red; text-align:center">INVALID EMAIL</h3>
+                    </div> 
                      <?php
 										 	if (!empty($_GET)){
 												

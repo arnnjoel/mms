@@ -26,5 +26,9 @@
     	<td colspan="5"><center><b style="font-size: 16px">No Categories</b></center></td>
     </tr>
     <?php } ?>
+    
+    <tr>	
+    	<td colspan="3" align="center"><?php echo $this->pagination->create_links(); ?></td>
+    </tr>
   </table>
 </div>

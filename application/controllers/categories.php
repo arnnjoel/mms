@@ -63,6 +63,20 @@ class Categories extends CI_Controller {
 		redirect(base_url('admin/categories'));
 	}
 	
+	public function category($id)
+	{
+		$this->load->model('product');
+		$data['name'] = $this->category->get_category_name($id);
+		$data['categories'] = $this->category->show();
+		$data['products'] = $this->category->get_category_item($id);
+		$header['header_title'] = 'MMS - Categoryes - ' . $data['name'];
+		
+		$this->load->view('header', $header);
+		$this->load->view('categories/category', $data);
+		$this->load->view('right_tab', $data);
+		$this->load->view('footer');
+	}
+	
 }
 /* End of file contacts.php */
 /* Location: /application/controllers/contacts.php */

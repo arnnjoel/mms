@@ -33,7 +33,7 @@ class Register extends CI_Controller {
 
 		$this->session->set_userdata($newdata);
 		
-		echo $string;
+		//echo $string;
 		// views
 		$this->load->view('header', $header);
 		$this->load->view('register/index', $data);
@@ -44,6 +44,8 @@ class Register extends CI_Controller {
 	public function add()
 	{
 		$this->load->model('user');
+		if(!check_email($_POST['email']))
+			redirect(base_url('register?reg=false&error=email'));
 		if($this->user->add_user($_POST))
 			redirect(base_url('register?reg=true&flag=1'));
 	}
