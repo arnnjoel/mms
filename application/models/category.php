@@ -84,7 +84,7 @@ class Category extends CI_Model {
 		$config['base_url'] = base_url('categories/category/' . $id . '/');
 		$config['uri_segment'] = 4;
 		$config['total_rows'] = $query->num_rows();
-		$config['per_page'] = 1; 
+		$config['per_page'] = 6; 
 		$this->pagination->initialize($config); 
 		
 		$this->db->select('*');

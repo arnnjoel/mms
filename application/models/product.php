@@ -12,7 +12,7 @@ class Product extends CI_Model {
 	{
 		if(empty($id))
 		{
-			/*$this->load->library('pagination');*/
+			$this->load->library('pagination');
 			
 			$this->db->select('products.*, categories.category_name');
 			$this->db->from('products');
@@ -20,18 +20,19 @@ class Product extends CI_Model {
 			$this->db->order_by('products.id', 'ASC');
 			$query = $this->db->get();
 			
-			/*$config['base_url'] = base_url('admin/products/show');
+			$config['base_url'] = base_url('admin/products/show');
 			$config['uri_segment'] = 4;
 			$config['total_rows'] = $query->num_rows();
-			$config['per_page'] = 1; 
+			$config['per_page'] = 4; 
 			$this->pagination->initialize($config); 
 			
-			$this->db->select('*');
+			$this->db->select('products.*, categories.category_name');
 			$this->db->from('products');
-			$this->db->order_by('id', 'ASC');
+			$this->db->join('categories', 'categories.id = products.category_id');
+			$this->db->order_by('products.id', 'ASC');
 			$this->db->limit($config['per_page'], $this->uri->segment(4));
 			$query = $this->db->get();
-			*/
+			
 			$result = $query->result_array();
 			return $result;
 		}

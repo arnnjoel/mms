@@ -6,7 +6,6 @@
     <div class="right_footer">
       <a href="home">home</a>
       <a href="about/index">about us</a>
-      <a href="services/index">services</a>
       <a href="account">login</a>
       <a href="register">register</a>
       <a href="contact_us">contact us</a>
