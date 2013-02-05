@@ -1,7 +1,7 @@
 <div class="center_content">
   <div class="left_content">
     <div class="crumb_nav">
-      <a href="index.html">home</a> &gt;&gt; <?php echo $name; ?>
+      <a href="home/index">home</a> &gt;&gt; <?php echo $name; ?>
       </div>
       <div class="title"><span class="title_icon"><img src="images/bullet1.gif" alt="" title="" /></span><?php echo $name; ?></div>
   

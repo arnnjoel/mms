@@ -6,6 +6,7 @@ class Categories extends CI_Controller {
 	{
 		parent::__construct();
 		// Your own constructor code
+		if($this->session->userdata('admin') == '' && $this->uri->segment(2) != 'category')
 		if($this->session->userdata('admin') == '')
 			redirect(base_url('admin/login'));
 			
