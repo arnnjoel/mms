@@ -25,4 +25,15 @@ $(document).ready(function() {
 		else
 			return false
 	});
+	
+	$("#fancyBox").fancybox({
+		helpers: {
+			title : {
+				type : 'outside'
+			},
+			overlay : {
+				speedOut : 0
+			}
+		}
+	});
 });

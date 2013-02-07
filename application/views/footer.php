@@ -9,7 +9,6 @@
       <a href="account">login</a>
       <a href="register">register</a>
       <a href="contact_us">contact us</a>
-      <a href="http://www.000webhost.com/" target="_blank"><img src="http://www.000webhost.com/images/80x15_powered.gif" alt="Web Hosting" width="80" height="15" border="0" /></a>
     </div>       
   </div>
 

@@ -5,9 +5,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo $header_title ?></title>
 <link rel="icon" type="image/png" href="<?php echo base_url('images/favicon.ico'); ?>">
+<link href="css/jquery.fancybox.css" rel="stylesheet" type="text/css" />
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/jquery.fancybox.js"></script>
 </head>
 
 <body>

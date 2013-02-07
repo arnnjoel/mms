@@ -21,8 +21,10 @@ class About extends CI_Controller {
 	{
 		$header['header_title'] = 'MMS - About us';
 		$this->load->model('category');
+		$this->load->model('product');
 		
 		$data['categories'] = $this->category->show();
+		$data['best_seller'] = $this->product->best_seller(3);
 		
 
 		// views

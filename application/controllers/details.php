@@ -15,6 +15,7 @@ class Details extends CI_Controller {
 		
 		$data = $this->product->show($id);
 		$data['categories'] = $this->category->show();
+		$data['best_seller'] = $this->product->best_seller(3);
 		
 		$this->load->view('header', $header);
 		$this->load->view('details/item', $data);

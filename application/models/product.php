@@ -142,4 +142,22 @@ class Product extends CI_Model {
 		return $result;
 	}
 	
+	function best_seller($limit = 2)
+	{
+		$this->db->select('SUM( checkouts.quantity ) as total_qty, product_id, products.name, products.image');
+		$this->db->from('checkouts');
+		$this->db->join('products', 'checkouts.product_id = products.id', 'left');
+		$this->db->where('products.quantity >', 0);
+		$this->db->group_by('product_id');
+		$this->db->order_by('total_qty', 'DESC');
+		$this->db->limit($limit);
+		$query = $this->db->get();
+		
+		$result = $query->result_array();
+		
+		//printr($result);
+		
+		return $result;
+		//SELECT SUM(QUANTITY) as total_qty, product_id FROM `checkouts` GROUP BY product_id ORDER BY total_qty DESC LIMIT 2
+	}
 }

@@ -21,8 +21,10 @@ class Contact_us extends CI_Controller {
 	{
 		$header['header_title'] = 'MMS - Contact';
 		$this->load->model('category');
+		$this->load->model('product');
 		
 		$data['categories'] = $this->category->show();
+		$data['best_seller'] = $this->product->best_seller(3);
 
 		// views
 		$this->load->view('header', $header);

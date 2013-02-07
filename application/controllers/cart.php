@@ -15,6 +15,7 @@ class Cart extends CI_Controller {
 	{
 		$header['header_title'] = 'MMS - Cart';
 		$data['categories'] = $this->category->show();
+		$data['best_seller'] = $this->product->best_seller(3);
 		
 		$this->load->view('header', $header);
 		$this->load->view('cart/index', $data);

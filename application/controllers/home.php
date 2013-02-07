@@ -27,6 +27,8 @@ class Home extends CI_Controller {
 		$data['new'] = $this->product->new_products(6);
 		$data['categories'] = $this->category->show();
 		
+		$data['best_seller'] = $this->product->best_seller(3);
+		
 		// views
 		$this->load->view('header', $header);
 		$this->load->view('home/index', $data);

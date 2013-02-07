@@ -1,6 +1,6 @@
 <div style="padding: 20px">
 	<div>
-  	<a href="admin/products/add"><h3 align="center">add product</h3></a>
+  	<a href="admin/products/add"><h3>add product</h3></a>
   </div>
 	 <table align="center" width="100%">
     <tr>
@@ -10,7 +10,7 @@
       <th>quantity</th>
       <th>category</th>
       <th>option</th>
-      <?php echo $this->pagination->create_links(); ?>
+      
     </tr>
     <?php if(!empty($products)) { ?>
 			<?php foreach($products as $key => $values){ ?>
@@ -31,6 +31,9 @@
       </tr>
       
       <?php } ?>
+      <tr>
+      	<td colspan="6" align="center"><?php echo $this->pagination->create_links(); ?></td>
+      </tr>
     <?php }else{ ?>
     <tr style="border: 1px solid #000">
     	<td colspan="5">&nbsp;</td>

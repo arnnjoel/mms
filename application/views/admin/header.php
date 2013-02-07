@@ -17,6 +17,7 @@
         <li><a href="admin/contacts">Contacts</a></li>
         <li><a href="admin/products">Products</a></li>
         <li><a href="admin/categories">Category</a></li>
+        <li><a href="admin/checkouts">Checkouts</a></li>
         <?php if($this->session->userdata('admin')){ ?>
         <li><a href="admin/logout">Logout</a></li>
         <?php } ?>
@@ -24,3 +25,6 @@
     </div>                 
   </div>
   <div class="center_content">
+  <div style="padding: 5px 10px">
+  	<div class="title"><span class="title_icon"><img src="images/bullet1.gif" alt="" title=""></span><?php echo $this->uri->segment(2) ?></div>
+  <div>

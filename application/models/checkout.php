@@ -28,6 +28,7 @@ class Checkout extends CI_Model {
 			$query = $this->db->get();
 			$result = $query->row_array();
 			$quantity = $result['quantity'] - $items['qty'];
+			
 
 			$edit['quantity'] = $quantity;
 			$this->db->where('id', $items['id']);
@@ -38,14 +39,32 @@ class Checkout extends CI_Model {
 	
 	function show()
 	{
+		$this->load->library('pagination');
+		
 		//for chckout example
-		$this->db->select('products.id, products.name, products.price, checkouts.quantity, products.image, checkouts.created_at');
+		$this->db->select('products.id, products.name, products.price, checkouts.quantity, checkouts.created_at');
 		$this->db->from('checkouts');
 		$this->db->join('products', 'checkouts.product_id = products.id');
 		$this->db->order_by('products.id', 'ASC');
 		$query = $this->db->get();
+		//$result = $query->result_array();
+		
+		$config['base_url'] = base_url('admin/checkouts/show');
+		$config['uri_segment'] = 4;
+		$config['total_rows'] = $query->num_rows();
+		$config['per_page'] = 5; 
+		$this->pagination->initialize($config); 
+		
+		$this->db->select('products.id, products.name, products.price, checkouts.quantity, checkouts.created_at');
+		$this->db->from('checkouts');
+		$this->db->join('products', 'checkouts.product_id = products.id');
+		$this->db->order_by('products.id', 'ASC');
+		$this->db->limit($config['per_page'], $this->uri->segment(4));
+		$query = $this->db->get();
 		$result = $query->result_array();
 		
-		printr($result);
+		return $result;
+		//printr($result);
+		//printr($this->db->queries);
 	}
 }

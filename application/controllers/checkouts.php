@@ -19,12 +19,13 @@ class Checkouts extends CI_Controller {
 	public function show()
 	{
 		$header['header_title'] = 'MMS - Admin Page';
-		$data['checkout'] = $this->checkout->show();
+		$data['checkouts'] = $this->checkout->show();
 		
-		printr($data['checkout']);
+		//printr($data['checkout']);
 		// views
 		$this->load->view('admin/header', $header);
-		//$this->load->view('admin/products/show', $data);
+		//printr($data['checkouts']);
+		$this->load->view('admin/checkouts/show', $data);
 		$this->load->view('admin/footer');
 	}
 	

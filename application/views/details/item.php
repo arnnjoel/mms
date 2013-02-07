@@ -7,7 +7,11 @@
   
     <div class="feat_prod_box_details">
       
-        <div class="prod_img"><a href="details/item/<?php echo $id; ?>"><img src="images/uploads/<?php echo $image; ?>" width="119" alt="" title="" border="0"></a></div>
+        <div class="prod_img">
+        	<a href="details/item/<?php echo $id; ?>"><img src="images/uploads/<?php echo $image; ?>" width="119" alt="" title="" border="0"></a>
+          <br /><br />
+          <a href="images/uploads/<?php echo $image; ?>" rel="lightbox" id="fancyBox"><img src="images/zoom.gif" alt="" title="" border="0"></a>
+        </div>
           
           <div class="prod_det_box">
             <div class="box_top"></div>

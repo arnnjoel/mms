@@ -3,7 +3,7 @@
         
         	<div class="feat_prod_box_details">
             <p class="details">
-             JOIN US! Register an account and choose your desire username and password together with your email, phone and address.
+             JOIN US to get our regular updates of our latest products.
             </p>
             
               	<div class="contact_form">
