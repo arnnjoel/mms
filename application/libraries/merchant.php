@@ -337,6 +337,7 @@ class Merchant
 	<form name="payment" action="<?php echo htmlspecialchars($url); ?>" method="post">
 		<p><?php echo htmlspecialchars($message); ?></p>
 		<p>
+    	<?php printr($data); ?>
 			<?php foreach ($data as $key => $value): ?>
 				<input type="hidden" name="<?php echo htmlspecialchars($key); ?>" value="<?php echo htmlspecialchars($value); ?>" />
 			<?php endforeach ?>

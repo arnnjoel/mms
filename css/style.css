@@ -561,3 +561,7 @@ color:#797979;
 	text-align: center;
 	color:#0F0;
 }
+
+.tooltip { 
+	cursor: pointer
+}

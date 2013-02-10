@@ -2,9 +2,12 @@
 <div class="right_content">
 
   <div class="cart">
+  	<?php if ($this->session->userdata('username') != ''): ?>
+  	<div>Welcome <?php echo $this->session->userdata('username') . ' (<a href="account/edit">Update profile</a>)'; ?></div>
+    <?php endif; ?>
     <div class="title"><span class="title_icon"><img src="images/cart.gif" alt="" title=""></span>My cart</div>
     <div class="home_cart_content">
-    	<?php echo $this->cart->total_items(); ?> x items | <span class="red">TOTAL: <?php echo number_format($this->cart->total(), 2); ?> USD</span>
+    	<?php echo $this->cart->total_items(); ?> x items | <span class="red">TOTAL: <?php echo number_format($this->cart->total(), 2); ?> PHP</span>
     </div>
     <a href="cart" class="view_cart">view cart</a>
   </div>

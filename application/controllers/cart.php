@@ -34,7 +34,7 @@ class Cart extends CI_Controller {
 							 'options' => array('image' => $data['image'])
             );
 		$this->cart->insert($cart);
-		redirect(base_url('details/item/' . $id));
+		redirect(base_url('details/item/' . $id . '?notify=success&type=add_to_cart'));
 	}
 	
 	public function cancel_order()
@@ -45,30 +45,58 @@ class Cart extends CI_Controller {
 	
 	public function checkout_to_paypal()
   {
-		$this->load->library('merchant');
-		$this->merchant->load('paypal_express');
-		
-		$settings = array(
-				'username' => 'ramble_1359372375_biz_api1.yahoo.com',
-				'password' => '1359372395',
-				'signature' => 'ARpnSycQWqoeyRD7ChXlhN1unGKoAI-MTqtNiX4AvfZr5dgG3hD93dUm',
-				'test_mode' => true);
-		
-		$this->merchant->initialize($settings);
-		
-		$params = array(
-				'amount' => $this->cart->total(),
-				'currency' => 'USD',
-				'return_url' => 'http://mmssurplus.6te.net/cart/checkout',
-				'cancel_url' => 'http://mmssurplus.6te.net/cart/cart');
-		
-		$response = $this->merchant->purchase($params);
+		if ($this->session->userdata('username') != '' && $this->session->userdata('password') != '')
+		{
+			$this->load->library('merchant');
+			$this->merchant->load('paypal_express');
+			
+			$settings = array(
+					'username' => 'ramble_1359372375_biz_api1.yahoo.com',
+					'password' => '1359372395',
+					'signature' => 'ARpnSycQWqoeyRD7ChXlhN1unGKoAI-MTqtNiX4AvfZr5dgG3hD93dUm',
+					'test_mode' => true);
+			
+			$this->merchant->initialize($settings);
+			
+			foreach ($this->cart->contents() as $value)
+			{
+				$items[] = array(
+										'name' 	=> $value['name'],
+										'amt'		=> $value['price'],
+										'qty'		=> $value['qty']
+										);
+			}
+			
+			$params = array(
+					'items' => $items,
+					'amount' => '0.00',
+					'itemamt' => '0.00',
+					'currency' => 'PHP',
+					'return_url' => base_url('cart/checkout?notify=success&type=checkout'),
+					'cancel_url' => base_url('cart/cart')
+					);
+			
+			$response = $this->merchant->purchase($params);	
+		}
+		else
+			redirect(base_url('account?type=checkout&redirect=cart/checkout_to_paypal'));
 	}
 	
 	public function checkout()
 	{
 		$this->checkout->checkout_items();
 	  $this->cart->destroy();
+		redirect(base_url('cart'));
+	}
+	
+	public function remove($id)
+	{
+		$data = array(
+			'rowid' => $id,
+			'qty'   => 0
+		);
+
+		$this->cart->update($data);
 		redirect(base_url('cart'));
 	}
 }

@@ -34,7 +34,7 @@ class Categories extends CI_Controller {
 		if(!empty($_POST))
 		{
 			if($this->category->add($_POST))
-				redirect(base_url('admin/categories'));
+				redirect(base_url('admin/categories?notify=success&type=category'));
 		}
 		$header['header_title'] = 'MMS - Admin Page';
 		
@@ -48,7 +48,7 @@ class Categories extends CI_Controller {
 		if(!empty($_POST))
 		{
 			if($this->category->edit($_POST, $id))
-				redirect(base_url('admin/categories'));
+				redirect(base_url('admin/categories?notify=success&type=edit_category'));
 		}
 		$header['header_title'] = 'MMS - Admin Page';
 		$data = $this->category->show($id);

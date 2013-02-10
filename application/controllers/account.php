@@ -22,6 +22,14 @@ class Account extends CI_Controller {
 		if($this->session->userdata('username'))
 			redirect(base_url('account/edit'));
 		
+		if (!empty($_POST)) 
+		{
+			$this->load->model('user');
+			$redirect = !empty($_GET['redirect']) ? $_GET['redirect'] : 'home';
+			if($this->user->add_session($_POST))
+				redirect(base_url($redirect));
+		}
+		
 		$header['header_title'] = 'MMS - My account';
 		$this->load->model('category');
 		$this->load->model('product');
@@ -37,30 +45,21 @@ class Account extends CI_Controller {
 		$this->load->view('footer');
 	}
 	
-	public function log_in()
-	{
-		$this->load->model('user');
-		if($this->user->add_session($_POST))
-			redirect(base_url("home"));
-		else
-			redirect(base_url("account"));
-	}
-	
 	public function edit()
-	{
-		
-		
+	{		
 		if($this->session->userdata('username') == '')
 			redirect(base_url('account'));
 			
 		$header['header_title'] = 'MMS - My account';
 		
 		$this->load->model('user');
+		$this->load->model('category');
+		$this->load->model('product');
+		
 		$data = $this->user->load_user($this->session->userdata('id'));
-		echo $this->session->userdata('id');
-		//print_r($this->session->userdata);
-		//print_r($data);
-		// views
+		$data['categories'] = $this->category->show();
+		$data['best_seller'] = $this->product->best_seller(3);
+
 		$this->load->view('header', $header);
 		$this->load->view('account/edit', $data);
 		$this->load->view('right_tab');
@@ -77,7 +76,7 @@ class Account extends CI_Controller {
 	{
 		$this->load->model('user');
 		if($this->user->update_user($_POST))
-			redirect(base_url('account/edit?update=true&flag=1'));
+			redirect(base_url('account/edit?notify=success&type=profile'));
 	}
 }
 

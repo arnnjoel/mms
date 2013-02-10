@@ -34,7 +34,7 @@ class Products extends CI_Controller {
 		if(!empty($_POST))
 		{
 			if($this->product->add($_POST, $_FILES))
-				redirect(base_url('admin/products'));
+				redirect(base_url('admin/products?notify=success&type=product'));
 		}
 		
 		$data['categories'] = $this->category->show();
@@ -50,7 +50,7 @@ class Products extends CI_Controller {
 		if(!empty($_POST))
 		{
 			if($this->product->edit($_POST, $id, $_FILES))
-				redirect(base_url('admin/products'));
+				redirect(base_url('admin/products?notify=success&type=edit_product'));
 		}
 		
 		$header['header_title'] = 'MMS - Admin Page';

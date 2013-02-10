@@ -19,15 +19,19 @@
               <form method="post" action="cart/add/<?php echo $id; ?>">
               <div class="prod_title"><?php echo $name; ?></div>
               <p class="details"><?php echo str_replace("\n", '<br />', $description); ?></p>
-              <div class="price"><strong>PRICE:</strong> <span class="red"><?php echo number_format($price, 2); ?> $</span></div>
+              <div class="price"><strong>PRICE:</strong> <span class="red"><?php echo number_format($price, 2); ?> PHP</span></div>
               <div class="price">
                 <strong>QUANTITY:</strong> 
                 <span class="colors">
+                	<?php if ($quantity > 0): ?>
                 	<select name="quantity">
                   	<?php for($i = 1; $i <= $quantity; $i++) { ?>
                     <option><?php echo $i; ?></option>
                     <?php } ?> 
                   </select>
+                  <?php else: ?>
+                  <span style="color: red;">OUT OF STOCK</span>
+                  <?php endif; ?>
                 </span>
               </div>
               <input type="image" src="images/order_now.gif" name="submit" value="Order now" class="more" style="margin-left: 180px" />

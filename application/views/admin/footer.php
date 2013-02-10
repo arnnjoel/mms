@@ -10,7 +10,31 @@
       <a href="admin/categories">Category</a>
     </div>       
   </div>
+<?php if (!empty($_GET['notify']) && ($_GET['notify'] == 'success' || $_GET['notify'] == 'error')) {?>
+<script type="text/javascript">
+var text = new Object();
+var type = '<?php echo $_GET['notify'] ?>';
+if (type == 'success') {
+	// notification for success
+	text.product = 'Successfully updated category';
+	text.edit_product = 'Successfully updated category';
+	text.category = 'Successfully updated category';
+	text.edit_category = 'Successfully updated category';
+} else {
+	// notification for error
+	text.product = '';
+	text.category = '';
+}
 
+noty({
+	text: text.<?php echo $_GET['type'] ?>,
+	type: type,
+	dismissQueue: true,
+	layout: 'top',
+	theme: 'defaultTheme'
+});
+</script>
+<?php } ?>
 </div>
 </body>
 </html>

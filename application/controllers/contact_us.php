@@ -37,7 +37,7 @@ class Contact_us extends CI_Controller {
 	{
 		$this->load->model('contact');
 		if($this->contact->add_contact($_POST))
-			redirect(base_url('contact_us?contact=true&flag=1'));
+			redirect(base_url('contact_us?notify=success&type=contact_us'));
 	}
 }
 

@@ -17,7 +17,7 @@ class Product extends CI_Model {
 			$this->db->select('products.*, categories.category_name');
 			$this->db->from('products');
 			$this->db->join('categories', 'categories.id = products.category_id');
-			$this->db->order_by('products.id', 'ASC');
+			$this->db->order_by('products.name', 'ASC');
 			$query = $this->db->get();
 			
 			$config['base_url'] = base_url('admin/products/show');
@@ -29,7 +29,7 @@ class Product extends CI_Model {
 			$this->db->select('products.*, categories.category_name');
 			$this->db->from('products');
 			$this->db->join('categories', 'categories.id = products.category_id');
-			$this->db->order_by('products.id', 'ASC');
+			$this->db->order_by('products.name', 'ASC');
 			$this->db->limit($config['per_page'], $this->uri->segment(4));
 			$query = $this->db->get();
 			
@@ -48,6 +48,36 @@ class Product extends CI_Model {
 			$result = $query->row_array();
 			return $result;
 		}
+	}
+	
+	function show_all($limit = 5, $search = '')
+	{
+		$this->load->library('pagination');
+
+		$this->db->select('id');
+		$this->db->from('products');
+		if (!empty($search) && $search != 'all')
+			$this->db->like('name', $search);
+		$query = $this->db->get();
+		
+		$config['base_url'] = base_url('surplus/show/' . $search);
+		$config['uri_segment'] = 4;
+		$config['total_rows'] = $query->num_rows();
+		$config['per_page'] = $limit; 
+		$this->pagination->initialize($config); 
+		
+		$this->db->select('products.*, categories.category_name');
+		$this->db->from('products');
+		$this->db->join('categories', 'categories.id = products.category_id');
+		if (!empty($search) && $search != 'all')
+			$this->db->like('name', $search);
+			
+		$this->db->order_by('products.id', 'DESC');
+		$this->db->limit($config['per_page'], $this->uri->segment(4));
+		$query = $this->db->get();
+		
+		$result = $query->result_array();
+		return $result;
 	}
 	
 	function add($data, $file = '')

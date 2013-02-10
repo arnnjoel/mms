@@ -48,7 +48,7 @@ class Register extends CI_Controller {
 		$this->load->model('user');
 		
 		if($this->user->add_user($_POST))
-			redirect(base_url('register?reg=true&flag=1'));
+			redirect(base_url('register?notify=success&type=register'));
 	}
 }
 

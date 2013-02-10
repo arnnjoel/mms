@@ -19,6 +19,7 @@ class Home extends CI_Controller {
 	 */
 	public function index()
 	{
+		//currency_converter(200, 'PHP', 'USD');
 		$header['header_title'] = 'MMS - Home';
 		$this->load->model('product');
 		$this->load->model('category');
