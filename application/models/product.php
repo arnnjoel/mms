@@ -23,13 +23,13 @@ class Product extends CI_Model {
 			$config['base_url'] = base_url('admin/products/show');
 			$config['uri_segment'] = 4;
 			$config['total_rows'] = $query->num_rows();
-			$config['per_page'] = 4; 
+			$config['per_page'] = 8; 
 			$this->pagination->initialize($config); 
 			
 			$this->db->select('products.*, categories.category_name');
 			$this->db->from('products');
 			$this->db->join('categories', 'categories.id = products.category_id');
-			$this->db->order_by('products.name', 'ASC');
+			$this->db->order_by('products.id', 'DESC');
 			$this->db->limit($config['per_page'], $this->uri->segment(4));
 			$query = $this->db->get();
 			
@@ -42,7 +42,7 @@ class Product extends CI_Model {
 			$this->db->from('products');
 			$this->db->join('categories', 'categories.id = products.category_id');
 			$this->db->where('products.id', $id);
-			$this->db->order_by('products.id', 'ASC');
+			$this->db->order_by('products.id', 'DESC');
 			$query = $this->db->get();
 			
 			$result = $query->row_array();

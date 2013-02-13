@@ -16,8 +16,8 @@ var text = new Object();
 var type = '<?php echo $_GET['notify'] ?>';
 if (type == 'success') {
 	// notification for success
-	text.product = 'Successfully updated category';
-	text.edit_product = 'Successfully updated category';
+	text.product = 'Successfully updated product';
+	text.edit_product = 'Successfully updated product';
 	text.category = 'Successfully updated category';
 	text.edit_category = 'Successfully updated category';
 } else {

@@ -19,14 +19,14 @@ var type = '<?php echo $_GET['notify'] ?>';
 if (type == 'success') {
 	// notification for success
 	text.checkout = 'Successfully purchased products.';
-	text.register = '';
-	text.contact_us = '';
+	text.register = 'Registration complete';
+	text.contact_us = 'Success';
 	text.add_to_cart = 'Item added to cart';
 	text.profile = 'Successfully updated profile';
 } else {
 	// notification for error
-	text.checkout = '';
-	text.registration = '';
+	text.checkout = 'Error in checkout';
+	text.registration = 'Registration error';
 }
 
 noty({

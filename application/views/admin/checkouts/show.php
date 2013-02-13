@@ -15,9 +15,9 @@
       <tr align="center">
       	<td><span class="tooltip" title="<?php echo "&bull; Email: {$values['email']} &bull; Phone: {$values['phone']} &bull; Address: {$values['address']}"; ?>"><?php echo $values['username'] ?></span></td>
       	<td><?php echo $values['name'] ?></td>
-      	<td><?php echo $values['price'] ?> USD</td>
+      	<td><?php echo $values['price'] ?> PHP</td>
       	<td><?php echo $values['quantity'] ?> PCS</td>
-      	<td><?php echo $values['price'] * $values['quantity']?> USD</td>
+      	<td><?php echo $values['price'] * $values['quantity']?> PHP</td>
       	<td><?php echo $values['created_at'] ?></td>
       </tr>
       <?php }?>

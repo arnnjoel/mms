@@ -28,8 +28,7 @@
 
                     <div class="form_row">
                         <div class="terms">
-                        <input type="checkbox" name="terms" />
-                        Remember me
+                        <a href="register">Create an account</a>
                         </div>
                     </div> 
 

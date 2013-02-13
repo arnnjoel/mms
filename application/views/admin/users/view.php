@@ -5,7 +5,7 @@
       <th>phone</th>
       <th>address</th>
       <th>email</th>
-      <th>date sent</th>
+      <th>date registered</th>
       <th>option</th>
     </tr>
     <?php foreach($users as $key => $values){ ?>
