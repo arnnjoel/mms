@@ -22,6 +22,7 @@ class Products extends CI_Controller {
 	{
 		$header['header_title'] = 'MMS - Admin Page';
 		$data['products'] = $this->product->show();
+		$data['categories'] = $this->category->show();
 	
 		// views
 		$this->load->view('admin/header', $header);

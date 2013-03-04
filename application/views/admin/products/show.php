@@ -7,6 +7,11 @@
         	Search: 
           <input type="text" name="search" value="<?php echo !empty($_POST) ? $_POST['search'] : '' ?>" />
         </label>
+        <select name="category">
+					<?php foreach($categories as $key => $values) { ?>
+					<option value="<?php echo $values['id'] ?>"><?php echo $values['category_name'] ?></option>
+				<?php } ?>
+				</select>
         <input type="submit" name="submit" value="Search" />
       </form>
 	 <table align="center" width="100%">
