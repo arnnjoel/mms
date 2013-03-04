@@ -8,6 +8,7 @@
           <input type="text" name="search" value="<?php echo !empty($_POST) ? $_POST['search'] : '' ?>" />
         </label>
         <select name="category">
+        <option value="all">All</option>
 					<?php foreach($categories as $key => $values) { ?>
 					<option value="<?php echo $values['id'] ?>"><?php echo $values['category_name'] ?></option>
 				<?php } ?>

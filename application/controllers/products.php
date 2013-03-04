@@ -21,8 +21,11 @@ class Products extends CI_Controller {
 	public function show()
 	{
 		$header['header_title'] = 'MMS - Admin Page';
-		$data['products'] = $this->product->show();
-		$data['categories'] = $this->category->show();
+		if(!empty($_POST))
+ 		 $data['products'] = $this->product->show('',$_POST['search'], $_POST['category']);
+		else
+  		$data['products'] = $this->product->show();
+			$data['categories'] = $this->category->show();
 	
 		// views
 		$this->load->view('admin/header', $header);

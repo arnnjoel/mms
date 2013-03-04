@@ -8,7 +8,7 @@ class Product extends CI_Model {
 		parent::__construct();
 	}
 	
-	function show($id = '')
+	function show($id ="", $search = "", $category = "")
 	{
 		if(empty($id))
 		{
@@ -17,6 +17,10 @@ class Product extends CI_Model {
 			$this->db->select('products.*, categories.category_name');
 			$this->db->from('products');
 			$this->db->join('categories', 'categories.id = products.category_id');
+			if (!empty($search))
+ 			 $this->db->like('name', $search);
+			if(!empty($category) && $category != 'all')
+  			$this->db->where('category_id', $category);
 			$this->db->order_by('products.name', 'ASC');
 			$query = $this->db->get();
 			
