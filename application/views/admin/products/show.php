@@ -2,6 +2,13 @@
 	<div>
   	<a href="admin/products/add"><h3>add product</h3></a>
   </div>
+  <form method="post" action="">
+      	<label>
+        	Search: 
+          <input type="text" name="search" value="<?php echo !empty($_POST) ? $_POST['search'] : '' ?>" />
+        </label>
+        <input type="submit" name="submit" value="Search" />
+      </form>
 	 <table align="center" width="100%">
     <tr>
     	<th>Product name</th>
@@ -26,7 +33,7 @@
         <td align="center"><?php echo $values['quantity']; ?></td>
         <td align="center"><?php echo $values['category_name']; ?></td>
         <td align="center">
-          <a href="admin/products/edit/<?php echo $values['id']; ?>"><img src="./images/admin/b_edit.png" title="edit" /></a> <a onClick="return confirm('Delete contact?');" href="admin/products/delete/<?php echo $values['id']; ?>"><img src="./images/admin/b_drop.png" title="delete" /></a>
+          <a href="admin/products/edit/<?php echo $values['id']; ?>"><img src="./images/admin/b_edit.png" title="edit" /></a> <a onClick="return confirm('Delete product?');" href="admin/products/delete/<?php echo $values['id']; ?>"><img src="./images/admin/b_drop.png" title="delete" /></a>
          </td>
       </tr>
       

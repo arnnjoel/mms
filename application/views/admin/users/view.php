@@ -16,7 +16,7 @@
       <td align="center"><?php echo $values['email']; ?></td>
       <td align="center"><?php echo date("Y-m-d", strtotime($values['create_at'])); ?></td>
       <td align="center">
-      	<a onClick="return confirm('Delete contact?');" href="admin/users/delete/<?php echo $values['id']; ?>"><img src="./images/admin/b_drop.png" title="delete" /></a>
+      	<a onClick="return confirm('Delete user?');" href="admin/users/delete/<?php echo $values['id']; ?>"><img src="./images/admin/b_drop.png" title="delete" /></a>
     </tr>
     <?php } ?>
   </table>

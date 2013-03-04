@@ -14,7 +14,7 @@
         <td align="center"><?php echo $values['category_name']; ?></td>
         <td align="center"><?php echo date("Y-m-d", strtotime($values['created_at'])); ?></td>
         <td align="center">
-          <a href="admin/categories/edit/<?php echo $values['id']; ?>"><img src="./images/admin/b_edit.png" title="edit" /> edit</a> <a onClick="return confirm('Delete contact?');" href="admin//categories/delete/<?php echo $values['id']; ?>"><img src="./images/admin/b_drop.png" title="delete" /> delete</a>
+          <a href="admin/categories/edit/<?php echo $values['id']; ?>"><img src="./images/admin/b_edit.png" title="edit" /> edit</a> <a onClick="return confirm('Delete category?');" href="admin//categories/delete/<?php echo $values['id']; ?>"><img src="./images/admin/b_drop.png" title="delete" /> delete</a>
          </td>
       </tr>
       <?php } ?>

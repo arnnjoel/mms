@@ -7,6 +7,7 @@
       <th>quantity</th>
       <th>total</th>
       <th>date purchased</th>
+      <th>Action</th>
       
     </tr>
     
@@ -18,7 +19,15 @@
       	<td><?php echo $values['price'] ?> PHP</td>
       	<td><?php echo $values['quantity'] ?> PCS</td>
       	<td><?php echo $values['price'] * $values['quantity']?> PHP</td>
-      	<td><?php echo $values['created_at'] ?></td>
+      	<td align="center"><?php echo date("Y-m-d", strtotime($values['created_at'])); ?></td>
+        <td><form>
+        				<select>
+  							<option>paid</option>
+                <option>delivered</option>
+								</select>
+                <input type="submit" value="save">
+        		</form>
+         </td>
       </tr>
       <?php }?>
        <tr>
