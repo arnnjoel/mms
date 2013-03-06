@@ -28,7 +28,7 @@ class Contact extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('contacts');
-		$this->db->order_by('id', 'ASC');
+		$this->db->order_by('id', 'DESC');
 		$query = $this->db->get();
 		
 		$result = $query->result_array();

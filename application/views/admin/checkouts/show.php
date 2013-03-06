@@ -7,7 +7,7 @@
       <th>quantity</th>
       <th>total</th>
       <th>date purchased</th>
-      <th>Action</th>
+      <th>delivery</th>
       
     </tr>
     
@@ -20,13 +20,19 @@
       	<td><?php echo $values['quantity'] ?> PCS</td>
       	<td><?php echo $values['price'] * $values['quantity']?> PHP</td>
       	<td align="center"><?php echo date("Y-m-d", strtotime($values['created_at'])); ?></td>
-        <td><form>
-        				<select>
-  							<option>paid</option>
-                <option>delivered</option>
+        <td>
+        <?php if ($values['status'] != 'delivered') { ?>
+        		<form method="post" action="">
+            		<input type="hidden" name="id" value="<?php echo $values['checkout_id'] ?>" />
+        				<select name="status">
+  							<option<?php echo empty($values['status']) ? "" : ' selected="selected"' ?> value="pending">pending</option>
+                <option<?php echo $values['status'] == 'delivered' ? ' selected="selected"' : '' ?> value="delivered">delivered</option>
 								</select>
-                <input type="submit" value="save">
+                <input type="submit" name="submit" value="save">
         		</form>
+          <?php }else{ ?>
+          <?php echo $values['status'] ?>
+          <?php } ?>
          </td>
       </tr>
       <?php }?>

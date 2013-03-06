@@ -19,7 +19,14 @@ class Checkouts extends CI_Controller {
 	public function show()
 	{
 		$header['header_title'] = 'MMS - Admin Page';
+		if (!empty($_POST)) {
+			$this->checkout->update($_POST);
+			redirect(base_url('admin/checkouts'));
+		}
+		
 		$data['checkouts'] = $this->checkout->show();
+		
+		
 		
 		//printr($data['checkout']);
 		// views

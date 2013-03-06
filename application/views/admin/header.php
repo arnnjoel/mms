@@ -12,6 +12,9 @@
 <link href="./css/jqueryUI/jquery-ui.css" rel="stylesheet" type="text/css" />
 <link href='//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic&amp;subset=latin,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
 
+
+
+
 <script type="text/javascript" src="./js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="./js/admin.js"></script>
 
@@ -24,6 +27,8 @@
 <!-- jquery ui js -->
 <script type="text/javascript" src="./js/jquery-ui.js"></script>
 <!-- end jquery ui js -->
+
+
 </head>
 
 <body>

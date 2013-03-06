@@ -17,11 +17,11 @@
       </form>
 	 <table align="center" width="100%">
     <tr>
-    	<th>Product name</th>
-      <th>price</th>
+    	<th><a href="<?php echo base_url($_SERVER['REDIRECT_QUERY_STRING']) ?>?sort_by=name&order=<?php echo empty($_GET) || $_GET['order'] == 'asc' ? 'desc' : 'asc' ?>">Product name</a></th>
+      <th><a href="<?php echo base_url($_SERVER['REDIRECT_QUERY_STRING'])?>?sort_by=price&order=<?php echo empty($_GET) || $_GET['order'] == 'asc' ? 'desc' : 'asc' ?>">price</a></th>
       <th>description</th>
-      <th>quantity</th>
-      <th>category</th>
+      <th><a href="<?php echo base_url($_SERVER['REDIRECT_QUERY_STRING']) ?>?sort_by=quantity&order=<?php echo empty($_GET) || $_GET['order'] == 'asc' ? 'desc' : 'asc' ?>">quantity</a></th>
+      <th><a href="<?php echo base_url($_SERVER['REDIRECT_QUERY_STRING']) ?>?sort_by=category_id&order=<?php echo empty($_GET) || $_GET['order'] == 'asc' ? 'desc' : 'asc' ?>">category</a></th>
       <th>option</th>
       
     </tr>

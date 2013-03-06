@@ -33,7 +33,14 @@ class Product extends CI_Model {
 			$this->db->select('products.*, categories.category_name');
 			$this->db->from('products');
 			$this->db->join('categories', 'categories.id = products.category_id');
-			$this->db->order_by('products.id', 'DESC');
+			if (!empty($search))
+ 			 $this->db->like('name', $search);
+			if(!empty($category) && $category != 'all')
+  			$this->db->where('category_id', $category);
+			if(!empty($_GET))
+				$this->db->order_by('products.'.$_GET['sort_by'], $_GET['order']);
+			else
+				$this->db->order_by('products.id', 'DESC');
 			$this->db->limit($config['per_page'], $this->uri->segment(4));
 			$query = $this->db->get();
 			

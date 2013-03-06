@@ -53,7 +53,7 @@ class Checkout extends CI_Model {
 		$config['per_page'] = 5; 
 		$this->pagination->initialize($config); 
 		
-		$this->db->select('products.id, products.name, products.price, checkouts.quantity, checkouts.created_at, users.*');
+		$this->db->select('checkouts.id as checkout_id, products.id, products.name, products.price, checkouts.quantity, checkouts.created_at, status, users.*');
 		$this->db->from('checkouts');
 		$this->db->join('products', 'checkouts.product_id = products.id');
 		$this->db->join('users', 'checkouts.user_id = users.id');
@@ -61,9 +61,21 @@ class Checkout extends CI_Model {
 		$this->db->limit($config['per_page'], $this->uri->segment(4));
 		$query = $this->db->get();
 		$result = $query->result_array();
-		
+
 		return $result;
 		//printr($result);
 		//printr($this->db->queries);
+	}
+	
+	function update($data) {
+		$update = array(
+			'status' => $data['status'] == 'delivered' ? 'delivered' : ''
+		);
+		
+		$this->db->where('id', $data['id']);
+		if($this->db->update('checkouts', $update))
+			return true;
+		else
+			return false;
 	}
 }
